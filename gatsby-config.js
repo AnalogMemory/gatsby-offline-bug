@@ -5,5 +5,24 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Offline Test`,
+        short_name: `OfflineTest`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `static/favicon.ico`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        navigateFallbackBlacklist: [/^\/blog/, /^\/demo/]
+      }
+    }
+  ]
 }
